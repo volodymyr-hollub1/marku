@@ -11,6 +11,7 @@ module.exports = {
     mode: mode,
     entry: {
         scripts: './src/index.js',
+        home: './src/scripts/home.js'
     },
     output: {
         filename: '[name].[contenthash].js',
@@ -35,7 +36,8 @@ module.exports = {
             filename: 'style.[contenthash].css'
         }),
         new HtmlWebpackPlugin({
-            template: "./src/index.pug"
+            template: "./src/index.pug",
+            chunks: ['home']
         })],
     module: {
         rules: [
