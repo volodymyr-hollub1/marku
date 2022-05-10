@@ -2,3 +2,17 @@
 @use "./utilities/fonts";
 @use "./utilities/global";
 @use "./utilities/typo";
+@use "./components/header";
+@use "./components/btns";
+@use "./pages/home/above-fold";
+@use "./pages/home/company";
+@use "./pages/home/about-info";
+@use "./pages/home/proccess";
+@use "./pages/home/cta-box";
+@use "./pages/home/content";
+@use "./pages/home/value-props";
+@use "./pages/home/stats";
+@use "./pages/home/testimonials";
+@use "./pages/home/blog";
+@use "./pages/home/cta";
+@use "./components/footer";

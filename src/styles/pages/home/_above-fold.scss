@@ -1,0 +1,145 @@
+@use "../../utilities/global" as g;
+
+.above-fold {
+	margin-top: 131px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	@media screen and (min-width: 320px) {
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+	&__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		max-width: 646px;
+	}
+	&__title {
+		font-size: 60px;
+		line-height: 74px;
+		font-weight: 800;
+	}
+	&__text {
+		margin-top: 19px;
+		font-size: 20px;
+		line-height: 30px;
+		font-weight: 500;
+	}
+	&__btns {
+		margin-top: 47px;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		@media screen and (min-width: 320px) and (max-width: 576px) {
+			flex-direction: column;
+		}
+	}
+	&__btn {
+		margin-right: 5%;
+		border-radius: 47px;
+		background-color: g.$purple;
+		color: g.$white;
+		font-size: 16px;
+		font-weight: 600;
+		line-height: 30px;
+		padding: 15px 36px;
+		transition: all 0.5s ease;
+		border: 1px solid transparent;
+		&:hover {
+			background-color: transparent;
+			color: g.$purple;
+			border: 1px solid g.$purple;
+		}
+	}
+	&__player {
+		margin-right: 11px;
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+		background-color: g.$green;
+		position: relative;
+		cursor: pointer;
+		&:hover .above-fold__triangle {
+			transform: scale(1.5);
+		}
+	}
+	&__triangle {
+		width: 0;
+		height: 0;
+		border-left: 25px solid g.$white;
+		border-top: 12.5px solid transparent;
+		border-bottom: 12.5px solid transparent;
+		position: absolute;
+		top: 30%;
+		left: 36%;
+		transition: all 0.5s ease;
+	}
+	&__desc {
+		font-size: 17px;
+		line-height: 30px;
+		font-weight: 600;
+		color: g.$purple;
+		cursor: pointer;
+		transition: all 0.5s ease;
+		&:hover {
+			letter-spacing: 2px;
+		}
+	}
+	&__form-wrapper {
+		margin-left: 38px;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		max-width: 356px;
+		@media screen and (min-width: 320px) {
+			margin-left: 0;
+			max-width: 100%;
+		}
+	}
+	&__form-desc {
+		margin-top: 50px;
+		font-size: 24px;
+		line-height: 30px;
+		font-weight: 700;
+		color: g.$purple;
+		@media screen and (min-width: 320px) {
+			text-align: center;
+		}
+	}
+	&__form {
+		margin-top: 22px;
+		@media screen and (min-width: 320px) {
+			width: 100%;
+		}
+	}
+	&__input {
+		padding: 15px 22px;
+		border: 1px solid #dfe4f1;
+		border-radius: 5px;
+		margin-bottom: 24px;
+		width: 100%;
+		opacity: 0.5;
+		font-size: 20px;
+		line-height: 30px;
+		font-weight: 500;
+		&--submit {
+			opacity: 1;
+			background-color: g.$orange;
+			text-transform: uppercase;
+			color: g.$white;
+			font-size: 16px;
+			line-height: 30px;
+			font-weight: 700;
+			padding-top: 16px;
+			padding-bottom: 14px;
+			cursor: pointer;
+			transition: all 0.5s ease;
+			&:hover {
+				background-color: transparent;
+				color: g.$purple;
+				border-color: g.$orange;
+			}
+		}
+	}
+}

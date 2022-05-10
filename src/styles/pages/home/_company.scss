@@ -1,0 +1,19 @@
+.company {
+	margin-top: 100px;
+	display: flex;
+	flex-direction: column;
+	flex-direction: center;
+	align-items: center;
+	&__title {
+		text-align: center;
+		font-size: 22px;
+		line-height: 30px;
+		font-weight: 700;
+	}
+	&__list {
+		margin-top: 36px;
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		gap: 50px;
+	}
+}

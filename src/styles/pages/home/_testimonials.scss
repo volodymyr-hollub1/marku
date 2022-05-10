@@ -1,0 +1,139 @@
+@use "../../utilities/global" as g;
+
+.testimonials {
+	margin-top: 125px;
+	&__content-wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		@media screen and (min-width: 768px) {
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+	&__headline {
+		width: 364px;
+		@media screen and (min-width: 768px) {
+			width: 100%;
+		}
+	}
+	&__subtext {
+		text-transform: uppercase;
+		color: g.$purple;
+		font-size: 14px;
+		line-height: 17px;
+		font-weight: 700;
+	}
+	&__text {
+		margin-top: 15px;
+		font-size: 40px;
+		font-weight: 800;
+		line-height: 48px;
+	}
+	&__swiper {
+		margin-top: 40px;
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		width: 689px;
+	}
+	&__img {
+		display: inline-block;
+		width: 689px;
+		& > img {
+			border-radius: 15px;
+		}
+	}
+
+	&__slider-images {
+		display: none;
+	}
+
+	&__quote {
+		position: absolute;
+		top: 30%;
+		right: 0;
+		@media screen and (min-width: 768px) {
+			display: none;
+		}
+	}
+	&__btns {
+		margin-top: 37px;
+		@media screen and (min-width: 768px) {
+			display: none;
+		}
+	}
+	&__btn--next,
+	&__btn--prev {
+		position: relative;
+		margin-left: 10px;
+		span,
+		&::before,
+		&::after {
+			background-color: g.$white;
+		}
+	}
+	&__btn--prev {
+		transform: rotate(-180deg);
+		margin-left: 8px;
+	}
+	&__content {
+		display: flex;
+		flex-direction: column;
+		margin-left: 53px;
+		max-width: 455px;
+		@media screen and (min-width: 768px) {
+			margin-left: 0;
+			margin-top: 50px;
+		}
+	}
+	&__title {
+		margin-top: 16px;
+		font-style: 20px;
+		line-height: 30px;
+		font-weight: 800;
+	}
+	&__desc {
+		font-style: 20px;
+		line-height: 24px;
+		font-weight: 500;
+		color: g.$purpleDimmed;
+		p {
+			margin-top: 20px;
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+	}
+	&__rate {
+		margin-top: 16px;
+	}
+	&__people-first-name {
+		font-style: 16px;
+		line-height: 30px;
+		font-weight: 800;
+	}
+	&__people-position {
+		color: g.$purpleDimmed;
+	}
+}
+
+.btn-wrapper {
+	margin-left: 10px;
+	position: relative;
+	display: inline-block;
+	&::before {
+		content: "";
+		position: absolute;
+		width: 34px;
+		height: 34px;
+		top: 0;
+		left: 0;
+		border-radius: 50%;
+		background-color: g.$purple;
+		z-index: -1;
+	}
+	&:active::before {
+		opacity: 0.5;
+	}
+}

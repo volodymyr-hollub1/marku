@@ -1,0 +1,15 @@
+@use "../utilities/global" as g;
+
+.btn--purple {
+	padding: 17px 35px;
+	color: g.$white;
+	background-color: g.$purple;
+	border-radius: 10px;
+	border: 2px solid transparent;
+	transition: all 0.5s ease;
+	&:hover {
+		color: g.$purple;
+		background-color: transparent;
+		border: 2px solid g.$purple;
+	}
+}

@@ -1,142 +1,94 @@
-//colors
+$purple: #4f46ba;
 $white: #fff;
+$green: #22d497;
+$orange: #ff7f5c;
+$purpleDimmed: #64607d;
+$palePurple: #f8f9fd;
+$grey: #6c6c6c;
+$whiteDimmed: #dfdfdf;
+$blueSky: #0091d0;
+$deepGreen: #01966b;
+$lightGrey: #e9ecf2;
+$palletGrey: #dee1e6;
 
-$black: #1c1c1c;
-$black-1: #1c1c1c;
+body {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	z-index: 1;
+	overflow-x: hidden;
+}
+.wrapper {
+	max-width: 1230px;
+	padding: 28px 30px 0px 30px;
+	margin: 0 auto;
+}
 
-$gray-1: #f0f0f0;
-$gray-2: #e7e7e7;
-$gray-3: #424242;
-$gray-4: #ababab;
-$gray-5: #dcdfe0;
-$gray-6: #d4d4d4;
-$gray-7: #676767;
-
-$green: #3c7265;
-$green-1: #3c7265;
-$green-2: #d5e2df;
-$green-3: #5a8178;
-$gold: #b58500;
-$gold2: #d29a00;
-
-$red: #d70000;
-
-$p1: 6.3vw;
-$p2: 5.3vw;
-$p3: 5.6vw;
-$p4: 4.4vw;
-
-$t1: 58px;
-$t2: 71px;
-$t3: 121px;
-$t4: 125px;
-
-$ease: cubic-bezier(0.17, 0.67, 0.83, 0.67);
-
-//font-family
-
-$ff: "OpenSans", serif;
-$ff-h: "PlayFair", sans-serif;
-
-body > * {
-	font-size: 14px;
-	-ms-text-size-adjust: 100%;
-	-moz-text-size-adjust: 100%;
-	-webkit-text-size-adjust: 100%;
-	font-family: $ff;
-	line-height: 1.6;
-	color: $black;
-	letter-spacing: 0.01em;
-	@include bp(768, min) {
-		font-size: 14px;
-	}
-	@include bp(1920, min) {
-		font-size: 18px;
+input[type="email"],
+input[type="password"] {
+	&:focus {
+		border-color: $purple;
 	}
 }
-input,
-label,
-textarea,
-button {
-	font-family: $ff;
-	font-weight: 400;
+
+.btn-up {
+	position: fixed;
+	bottom: 10%;
+	right: 4%;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	background-color: $green;
+	color: $white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	display: none;
+	transition: all 0.5s ease;
+	z-index: 50;
+	cursor: pointer;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
-	font-weight: 700;
-}
-h1,
-.h1 {
-	font-size: 32px;
-	font-weight: 400;
-	font-family: $ff-h;
-	line-height: 115%;
-	@include bp(768, min) {
-		font-size: 56px;
-		line-height: 1.3;
-	}
-	@include bp(1200, min) {
-		font-size: 64px;
-	}
-	@include bp(1920, min) {
-		font-size: 80px;
+
+.show-btn {
+	display: flex;
+	animation-name: showBtn;
+	animation-duration: 0.7s;
+	animation-timing-function: ease;
+	animation-fill-mode: forwards;
+	@media screen and (min-width: 768px) {
+		display: none;
 	}
 }
-h2,
-.h2 {
-	font-size: 24px;
-	font-weight: 400;
-	font-family: $ff-h;
-	color: $black;
-	line-height: 1.25;
-	margin-bottom: 20px;
-	@include bp(768, min) {
-		font-size: 40px;
+
+@keyframes showBtn {
+	0% {
+		opacity: 0;
 	}
-	@include bp(1920, min) {
-		font-size: 56px;
+	100% {
+		opacity: 1;
 	}
 }
-h3,
-.h3 {
-	font-size: 16px;
-	font-family: $ff-h;
-	font-weight: 400;
-	@include bp(768, min) {
-		font-size: 24px;
-	}
-	@include bp(1920, min) {
-		font-size: 32px;
-	}
+
+.ml6 {
+	position: relative;
+	font-weight: 900;
+	font-size: 3.3em;
 }
-.p1 {
-	font-size: 14px;
-	font-weight: 400;
-	@include bp(768, min) {
-		font-size: 18px;
-	}
-	@include bp(1920, min) {
-		font-size: 24px;
-	}
+.ml3 {
+	position: relative;
 }
-.p2 {
-	font-weight: 300;
-	font-size: 13px;
-	letter-spacing: auto;
-	@include bp(768, min) {
-		font-size: 16px;
-	}
-	@include bp(1920, min) {
-		font-size: 20px;
-	}
+
+.ml3 .text-wrapper,
+.ml6 .text-wrapper {
+	position: relative;
+	display: block;
+	padding-top: 0.2em;
+	padding-right: 0.05em;
+	padding-bottom: 0.1em;
+	overflow: hidden;
+}
+
+.ml3 .letter {
+	display: inline-block;
+	list-style: 1em;
 }

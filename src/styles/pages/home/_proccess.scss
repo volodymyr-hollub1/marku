@@ -1,0 +1,41 @@
+.proccess {
+	margin-top: 60px;
+
+	&__list {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	&__item {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		width: 279px;
+		margin-left: 85px;
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+	&__name {
+		margin-top: 24px;
+		font-style: 16px;
+		line-height: 30px;
+		font-weight: 800;
+	}
+	&__img {
+		width: 64px;
+		height: 64px;
+	}
+	&__number {
+		position: absolute;
+		display: block;
+		font-size: 204px;
+		line-height: 140px;
+		font-weight: 900;
+		opacity: 0.05;
+		top: 0;
+		right: 0;
+	}
+}

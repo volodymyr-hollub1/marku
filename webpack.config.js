@@ -11,11 +11,11 @@ module.exports = {
     mode: mode,
     entry: {
         scripts: './src/index.js',
-        home: './src/scripts/home.js'
+        index: './src/styles/index.scss'
     },
     output: {
         filename: '[name].[contenthash].js',
-        assetModuleFilename: "assets/[name].[hash].[ext]",
+        assetModuleFilename: "assets/[name][ext]",
         clean: true,
     },
     devServer: {
@@ -23,7 +23,7 @@ module.exports = {
         static: {
             directory: './src',
             watch: true
-        }
+        },
     },
     devtool: 'source-map',
     optimization: {
@@ -33,22 +33,22 @@ module.exports = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: 'style.[contenthash].css'
+            filename: 'style.css'
         }),
         new HtmlWebpackPlugin({
-            template: "./src/index.pug",
-            chunks: ['home']
+            template: "./src/index.html",
+            filename: "index.html",
         })],
     module: {
         rules: [
             {
-            test: /\.html$/i,
-            loader: "html-loader",
+                test: /\.html$/,
+                loader: "underscore-template-loader"
             },
             {
                 test: /\.(sa|sc|c)ss$/,
                 use: [
-                    (mode === 'development') ? "style-loader" : MiniCssExtractPlugin.loader,
+                    "style-loader",
                     "css-loader",
                     {
                         loader: "postcss-loader",
@@ -68,18 +68,10 @@ module.exports = {
                     "sass-loader",
                 ],
             },
-            {
-                test: /\.(png|svg|jpg|jpeg|gif)$/i,
-                type: 'asset/resource',
-            },
+            
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/i,
                 type: 'asset/resource',
-            },
-            {
-                test: /\.pug$/,
-                loader: 'pug-loader',
-                exclude: /(node_modules|bower_components)/,
             },
             {
                 test: /\.m?js$/,
@@ -90,7 +82,15 @@ module.exports = {
                     //     presets: ['@babel/preset-env']
                     // }
                 }
-            }
+            },
+            {
+                test: /\.(svg|png|jpe?g|gif)$/,
+                type: 'asset/resource'
+            },
+            {
+                test: /\.svg$/,
+                type: 'asset/inline'
+            } 
         ]
     },
 }

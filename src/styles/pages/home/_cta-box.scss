@@ -1,0 +1,25 @@
+@use "../../utilities/global" as g;
+
+.cta-box {
+	margin: 110px auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	max-width: 1044px;
+	padding: 38px 70px 46px 70px;
+	background-color: g.$palePurple;
+	border-radius: 10px;
+
+	&__title {
+		font-size: 36px;
+		line-height: 56px;
+		font-weight: 800;
+		max-width: 561px;
+		margin-right: 160px;
+	}
+	&__btn {
+		& > span {
+			white-space: nowrap;
+		}
+	}
+}

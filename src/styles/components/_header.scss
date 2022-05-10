@@ -1,0 +1,64 @@
+@use "../utilities/global" as g;
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 52px;
+	&__polygon-right {
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: -10;
+	}
+	&__polygon-left--first {
+		position: absolute;
+		left: 0;
+		top: 10%;
+		z-index: -10;
+	}
+	&__polygon-left--second {
+		position: absolute;
+		left: 0;
+		top: 50%;
+		z-index: -10;
+	}
+	&__list {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		@media screen and (min-width: 320px) {
+			display: none;
+		}
+	}
+	&__item + &__item {
+		margin-left: 38px;
+	}
+	&__link {
+		font-weight: 700;
+		transition: all 0.5s ease;
+		&:hover {
+			color: g.$purple;
+		}
+	}
+	&__logo {
+		font-weight: 700;
+	}
+	&__subnav {
+		display: none;
+	}
+	&__auth {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		a:last-child {
+			margin-left: 49px;
+		}
+		@media screen and (min-width: 320px) {
+			display: none;
+		}
+	}
+	&__signin {
+		font-weight: 600;
+	}
+}

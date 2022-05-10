@@ -1,0 +1,65 @@
+@use "../../utilities/global" as g;
+
+.stats {
+	margin-top: 123px;
+	&__wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		@media screen and (min-width: 768px) {
+			flex-direction: column;
+		}
+	}
+	&__list,
+	&__item {
+		display: flex;
+		align-items: center;
+		@media screen and (min-width: 768px) {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+	&__list {
+		margin-top: 20px;
+	}
+	&__item {
+		margin-right: 40px;
+	}
+	&__wrapper {
+		max-width: 1200px;
+		background-color: g.$white;
+		border: 1px solid g.$whiteDimmed;
+		box-shadow: 0px 30px 90px rgba(0, 0, 0, 0.1);
+		border-radius: 22px;
+		padding: 41px 50px 47px 44px;
+	}
+	&__title {
+		font-size: 34px;
+		line-height: 46px;
+		font-weight: 800;
+	}
+	&__desc {
+		font-size: 18px;
+		line-height: 36px;
+		font-weight: 700;
+		color: g.$purpleDimmed;
+		margin-left: 18px;
+	}
+	&__img {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		width: 60px;
+		z-index: 2;
+		&::before {
+			content: "";
+			position: absolute;
+			width: 60px;
+			height: 60px;
+			background-color: g.$lightGrey;
+			border-radius: 5px;
+			z-index: -1;
+		}
+	}
+}
